@@ -279,6 +279,7 @@ h6 {
 
   background-size: cover;
   position: relative;
+  opacity: 100;
 }
 
 @media (min-width: 992px) {
