@@ -13,8 +13,10 @@ Welcome to my website project! This is an exciting endeavor where I am building 
 - Any additional pages should be created as separate HTML files and linked accordingly.
 
 ## How to View the Website
-1. Go to this website in your browser: www.smritikulkarni.com
-or
+
+Go to this website in your browser: www.smritikulkarni.com
+OR follow the following steps:
+
 1. Clone or download the repository to your local machine.
 2. Open the `index.html` file in your web browser to view the homepage.
 3. Navigate through the different pages using the navigation links.
@@ -27,6 +29,6 @@ or
 - Thank you for taking the time to explore my website project! I hope you enjoy browsing through the pages and getting to know me better.
 - Your support and encouragement mean a lot to me as I continue to learn and grow in my development journey.
 
-**Note:** This project is an ongoing effort, and I will be updating and adding new features over time. Stay tuned for exciting updates!
+**Note:** This project is an ongoing effort, and I will be updating and adding new features with assistance from my dad over time. Stay tuned for exciting updates!
 
 Once again, thank you for visiting my website project, and I appreciate your interest and support!
