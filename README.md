@@ -15,7 +15,7 @@ Welcome to my website project! This is an exciting endeavor where I am building 
 ## How to View the Website
 
 Go to this website in your browser: www.smritikulkarni.com
-OR follow the following steps:
+OR follow these steps:
 
 1. Clone or download the repository to your local machine.
 2. Open the `index.html` file in your web browser to view the homepage.
