@@ -6,6 +6,7 @@ Welcome to my website project! This is an exciting endeavor where I am building 
 - This project aims to showcase my creativity, interests, and skills through a personal website.
 - The website will consist of multiple pages, including a homepage, about me section, projects showcase, and contact information.
 - I am using HTML to structure the content and CSS for styling and visual enhancements.
+- I am also using Google Analytics to understand who is visiting my website, from where are they connecting and how long are they at it. 
 
 ## Project Structure
 - The main HTML file is `index.html`, which serves as the homepage of my website.
