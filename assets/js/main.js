@@ -172,33 +172,66 @@
   }
 
   /**
-   * Porfolio isotope and filter
+   * Portfolio isotope and filter
    */
   window.addEventListener('load', () => {
-    let portfolioContainer = select('.portfolio-container');
+    // Handle Portfolio section independently
+    let portfolioContainer = select('#portfolio .portfolio-container');
     if (portfolioContainer) {
       let portfolioIsotope = new Isotope(portfolioContainer, {
         itemSelector: '.portfolio-item'
       });
 
       let portfolioFilters = select('#portfolio-flters li', true);
-
-      on('click', '#portfolio-flters li', function(e) {
-        e.preventDefault();
-        portfolioFilters.forEach(function(el) {
-          el.classList.remove('filter-active');
-        });
-        this.classList.add('filter-active');
-
-        portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        portfolioIsotope.on('arrangeComplete', function() {
-          AOS.refresh()
-        });
-      }, true);
+      if (portfolioFilters) {
+        on('click', '#portfolio-flters li', function(e) {
+          e.preventDefault();
+          
+          // Update filter active state for Portfolio section only
+          portfolioFilters.forEach(function(el) {
+            el.classList.remove('filter-active');
+          });
+          this.classList.add('filter-active');
+          
+          // Apply filter to Portfolio section only
+          portfolioIsotope.arrange({
+            filter: this.getAttribute('data-filter')
+          });
+          portfolioIsotope.on('arrangeComplete', function() {
+            AOS.refresh()
+          });
+        }, true);
+      }
     }
 
+    // Handle Achievements section independently
+    let achievementsContainer = select('#achievements .portfolio-container');
+    if (achievementsContainer) {
+      let achievementsIsotope = new Isotope(achievementsContainer, {
+        itemSelector: '.portfolio-item'
+      });
+
+      let achievementsFilters = select('#achievements-filters li', true);
+      if (achievementsFilters) {
+        on('click', '#achievements-filters li', function(e) {
+          e.preventDefault();
+          
+          // Update filter active state for Achievements section only
+          achievementsFilters.forEach(function(el) {
+            el.classList.remove('filter-active');
+          });
+          this.classList.add('filter-active');
+          
+          // Apply filter to Achievements section only
+          achievementsIsotope.arrange({
+            filter: this.getAttribute('data-filter')
+          });
+          achievementsIsotope.on('arrangeComplete', function() {
+            AOS.refresh()
+          });
+        }, true);
+      }
+    }
   });
 
   /**
