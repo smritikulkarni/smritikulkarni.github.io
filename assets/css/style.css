@@ -128,18 +128,17 @@ h6 {
   overflow-y: auto;
 }
 
-@media (max-width: 991px) {
+@media (min-width: 991px) {
   #header {
-    width: 300px;
+    width: 300px;  /* Changed from default to 300px to accommodate wider nav */
     background: #fff;
-    border-right: 1px solid #e6e9ec;
-    left: -300px;
+    /* border-right: 1px solid #e6e9ec; */  /* Removed the vertical line */
   }
 }
 
 @media (min-width: 991px) {
   #main {
-    margin-left: 100px;
+    margin-left: 300px;  /* Changed from 100px to 300px to accommodate wider nav */
   }
 }
 
@@ -193,17 +192,66 @@ h6 {
   color: #45505b;
 }
 
+/* Toggle button styling */
+.nav-toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  background: #0563bb;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.nav-toggle-btn:hover {
+  background: #0451a3;
+  transform: scale(1.1);
+}
+
+/* Collapsed navigation state */
+.nav-collapsed #header {
+  width: 80px;
+}
+
+.nav-collapsed .nav-menu a,
+.nav-collapsed .nav-menu a:focus {
+  width: 60px;
+  justify-content: center;
+}
+
+.nav-collapsed .nav-menu a span,
+.nav-collapsed .nav-menu a:focus span {
+  display: none;
+}
+
+.nav-collapsed #main {
+  margin-left: 80px;
+}
+
+.nav-collapsed #hero {
+  padding-left: 80px;
+}
+
 @media (min-width: 992px) {
 
   .nav-menu a,
   .nav-menu a:focus {
-    width: 56px;
+    width: 100%;  /* Changed from 56px to 100% to keep expanded */
   }
 
   .nav-menu a span,
   .nav-menu a:focus span {
-    display: none;
-    color: #fff;
+    display: block;  /* Changed from 'none' to 'block' to always show text */
+    color: #45505b;  /* Changed from #fff to #45505b to match default text color */
   }
 }
 
@@ -222,16 +270,18 @@ h6 {
   color: #fff;
 }
 
-.nav-menu a:hover,
+/* Remove the hover width expansion since we want it always expanded */
+/* .nav-menu a:hover,
 .nav-menu li:hover>a {
   width: 100%;
   color: #fff;
-}
+} */
 
-.nav-menu a:hover span,
+/* Remove the hover span display since we want it always visible */
+/* .nav-menu a:hover span,
 .nav-menu li:hover>a span {
   display: block;
-}
+} */
 
 /**
 * Mobile Navigation 
@@ -275,28 +325,31 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-
-  background: url("../img/hero-bg.jpg") top right no-repeat;
-
+  /* background: url("../img/hero-bg.jpg") top right no-repeat; */  /* Removed the image background */
+  background: #ffffff;  /* Clean white background */
   background-size: cover;
   position: relative;
   opacity: 100;
 }
 
-@media (min-width: 992px) {
-  #hero {
-    padding-left: 160px;
-  }
-}
-
 #hero:before {
   content: "";
-  background: rgba(255, 255, 255, 0.8);
+  background: 
+    linear-gradient(90deg, transparent 98%, #e9ecef 98%),
+    linear-gradient(0deg, transparent 98%, #e9ecef 98%);
+  background-size: 30px 30px;
   position: absolute;
-  bottom: 0;
   top: 0;
   left: 0;
   right: 0;
+  bottom: 0;
+  opacity: 0.7;
+}
+
+@media (min-width: 992px) {
+  #hero {
+    padding-left: 300px;  /* Changed from 160px to 300px to match nav width */
+  }
 }
 
 #hero h1 {

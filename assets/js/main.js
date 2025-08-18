@@ -100,6 +100,29 @@
   })
 
   /**
+   * Navigation bar toggle (expand/collapse)
+   */
+  let navToggleBtn = select('#navToggleBtn')
+  if (navToggleBtn) {
+    on('click', '#navToggleBtn', function(e) {
+      let body = select('body')
+      let icon = this.querySelector('i')
+      
+      body.classList.toggle('nav-collapsed')
+      
+      if (body.classList.contains('nav-collapsed')) {
+        icon.classList.remove('bi-chevron-left')
+        icon.classList.add('bi-chevron-right')
+        this.title = 'Expand Navigation'
+      } else {
+        icon.classList.remove('bi-chevron-right')
+        icon.classList.add('bi-chevron-left')
+        this.title = 'Collapse Navigation'
+      }
+    })
+  }
+
+  /**
    * Scrool with ofset on links with a class name .scrollto
    */
   on('click', '.scrollto', function(e) {
